@@ -18,9 +18,9 @@ export class LoginPage implements OnInit {
   ngOnInit() {}
 
   login() {
-    const { email, password } = this;
-    this.authService.signIn(email, password);
-    // this.showAlert();
+    // const { email, password } = this;
+    // this.authService.signIn(email, password);
+    this.showAlert();
   }
 
   async showAlert() {
