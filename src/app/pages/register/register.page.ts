@@ -44,7 +44,7 @@ export class RegisterPage implements OnInit {
   async passwordAlert() {
     const alert = await this.alertCtrl.create({
       header: 'Registration',
-      message: 'Incorrect Password',
+      message: 'Password Not Match',
       buttons: ['OK'],
     });
     await alert.present();
