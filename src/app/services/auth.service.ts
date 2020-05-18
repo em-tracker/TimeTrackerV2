@@ -29,7 +29,7 @@ export class AuthService {
           team,
         });
         console.log(value);
-        this.router.navigate(['/']);
+        this.router.navigate(['/login']);
       })
       .catch((err) => {
         console.log(err);
@@ -40,7 +40,6 @@ export class AuthService {
       .signInWithEmailAndPassword(email, password)
       .then((value) => {
         console.log(value);
-        this.router.navigate(['navigation']);
       })
       .catch((err) => {
         console.log(err);
