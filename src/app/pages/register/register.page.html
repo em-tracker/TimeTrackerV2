@@ -24,11 +24,15 @@
       </ion-item>
       <ion-item lines="full">
         <ion-label position="floating">Password</ion-label>
-        <ion-input type="password" [(ngModel)]="password"></ion-input>
+        <ion-input type="password" [(ngModel)]="password" required></ion-input>
       </ion-item>
       <ion-item lines="full">
         <ion-label position="floating">Confirm Password</ion-label>
-        <ion-input type="password" [(ngModel)]="conpassword"></ion-input>
+        <ion-input
+          type="password"
+          [(ngModel)]="conpassword"
+          required
+        ></ion-input>
       </ion-item>
 
       <ion-row>
