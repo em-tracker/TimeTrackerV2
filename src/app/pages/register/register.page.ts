@@ -25,9 +25,23 @@ export class RegisterPage implements OnInit {
 
   register() {
     const { email, password, conpassword, manager, team } = this;
+    let validEmail = false;
+    let reg = /^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]*\.([a-z]{2,4})$/;
+
     if (password !== conpassword) {
       return this.passwordAlert();
     }
+
+    if (reg.test(email)) {
+      validEmail = true;
+    } else {
+      validEmail = false;
+    }
+
+    if (!validEmail) {
+      return this.badEmail();
+    }
+     
     this.authService.register(email, password, manager, team);
     this.successAlert();
   }
@@ -44,7 +58,16 @@ export class RegisterPage implements OnInit {
   async passwordAlert() {
     const alert = await this.alertCtrl.create({
       header: 'Registration',
-      message: 'Incorrect Password',
+      message: 'Password Not Match',
+      buttons: ['OK'],
+    });
+    await alert.present();
+  }
+
+  async badEmail() {
+    const alert = await this.alertCtrl.create({
+      header: 'Registration',
+      message: 'The username/email address is badly formatted.',
       buttons: ['OK'],
     });
     await alert.present();
