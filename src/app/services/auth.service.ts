@@ -40,6 +40,12 @@ export class AuthService {
       .signInWithEmailAndPassword(email, password)
       .then((value) => {
         console.log(value);
+        console.log('successfully login!');
+        this.afs.doc(`logins/${value.user.uid}`).set({
+          email,
+          createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+        });
+        this.router.navigate(['/user']);
       })
       .catch((err) => {
         console.log(err);
@@ -51,5 +57,5 @@ export class AuthService {
 
   signOut() {
     this.firebaseAuth.signOut();
-  }
+  } 
 }
