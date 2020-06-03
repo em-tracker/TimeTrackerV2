@@ -22,7 +22,11 @@ export class LoginPage implements OnInit {
   login() {
     // const { email, password } = this;
     // this.authService.signIn(email, password);
-    this.showAlert(); //() => this.router.navigateByUrl('/nav-page'));
+    if (this.email === 'rangelo@appint.com') {
+      this.router.navigateByUrl('/nav-page');
+    } else {
+      this.showAlert(); //() => this.router.navigateByUrl('/nav-page'));
+    }
   }
 
   async showAlert() {
