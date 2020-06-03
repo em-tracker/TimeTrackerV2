@@ -20,24 +20,11 @@ const routes: Routes = [
       ),
   },
   {
-    path: 'user',
-    loadChildren: () => import('./pages/user/user.module').then( m => m.UserPageModule)
-  },
-  {
     path: 'nav-page',
-    loadChildren: () => import('./pages/nav-page/nav-page.module').then( m => m.NavPagePageModule)
-  },
-  {
-    path: 'time-page',
-    loadChildren: () => import('./pages/time-page/time-page.module').then( m => m.TimePagePageModule)
-  },
-  {
-    path: 'sched-page',
-    loadChildren: () => import('./pages/sched-page/sched-page.module').then( m => m.SchedPagePageModule)
-  },
-  {
-    path: 'report-page',
-    loadChildren: () => import('./pages/report-page/report-page.module').then( m => m.ReportPagePageModule)
+    loadChildren: () =>
+      import('./pages/nav-page/nav-page.module').then(
+        (m) => m.NavPagePageModule
+      ),
   },
 ];
 

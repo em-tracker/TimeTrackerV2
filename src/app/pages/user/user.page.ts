@@ -8,12 +8,5 @@ import { Component, OnInit } from '@angular/core';
 export class UserPage implements OnInit {
   constructor() {}
 
-  ngOnInit() {
-    console.log('hello');
-    this.testFunction();
-  }
-
-  testFunction() {
-    console.log('2nd console');
-  }
+  ngOnInit() {}
 }

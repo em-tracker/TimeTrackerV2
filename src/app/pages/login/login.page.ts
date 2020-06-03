@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { AlertController } from '@ionic/angular';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -12,7 +13,8 @@ export class LoginPage implements OnInit {
 
   constructor(
     private authService: AuthService,
-    private alertCtrl: AlertController
+    private alertCtrl: AlertController,
+    private router: Router
   ) {}
 
   ngOnInit() {}
@@ -20,7 +22,7 @@ export class LoginPage implements OnInit {
   login() {
     // const { email, password } = this;
     // this.authService.signIn(email, password);
-    this.showAlert();
+    this.showAlert(); //() => this.router.navigateByUrl('/nav-page'));
   }
 
   async showAlert() {
@@ -32,6 +34,4 @@ export class LoginPage implements OnInit {
     });
     await alert.present();
   }
-
-  testing() {}
 }
